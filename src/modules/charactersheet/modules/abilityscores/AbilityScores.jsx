@@ -1,10 +1,10 @@
 import React from 'react';
-import propTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import AbilityScore from './AbilityScore';
+import AbilityScoresType from '../../../../lib/AbilityScoresType';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,12 +37,5 @@ export default function AbilityScores(props) {
 }
 
 AbilityScores.propTypes = {
-  scores: propTypes.shape({
-    strength: propTypes.number.isRequired,
-    dexterity: propTypes.number.isRequired,
-    constitution: propTypes.number.isRequired,
-    intelligence: propTypes.number.isRequired,
-    wisdom: propTypes.number.isRequired,
-    charisma: propTypes.number.isRequired,
-  }).isRequired,
+  scores: AbilityScoresType.isRequired,
 };

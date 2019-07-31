@@ -1,4 +1,23 @@
 {
+  "level": 2,
+  "savingthrows": {
+    "fortitude": {
+      "proficiency": 1,
+      "item": 2,
+      "abilityscore": "constitution"
+    },
+    "reflex": {
+      "proficiency": 1,
+      "item": 2,
+      "abilityscore": "dexterity"
+    },
+    "will": {
+      "proficiency": 1,
+      "item": 2,
+      "abilityscore": "wisdom"
+    },
+    "notes": ""
+  },
   "abilityscores": {
     "strength": 12,
     "dexterity": 13,

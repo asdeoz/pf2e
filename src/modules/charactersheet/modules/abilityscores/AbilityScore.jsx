@@ -2,10 +2,11 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import { calculateModifier, printModifier } from '../../../../utils/Utils';
 
 const getModifier = (score) => {
-  const modifier = (Math.floor(score / 2) - 5);
-  return modifier > 0 ? `+${modifier}` : modifier;
+  const modifier = calculateModifier(score);
+  return printModifier(modifier);
 };
 const abbr = name => (name.substring(0, 3));
 
