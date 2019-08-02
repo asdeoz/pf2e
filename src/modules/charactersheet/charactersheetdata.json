@@ -7,12 +7,12 @@
       "abilityscore": "constitution"
     },
     "reflex": {
-      "proficiency": 1,
+      "proficiency": 2,
       "item": 2,
       "abilityscore": "dexterity"
     },
     "will": {
-      "proficiency": 1,
+      "proficiency": 4,
       "item": 2,
       "abilityscore": "wisdom"
     },

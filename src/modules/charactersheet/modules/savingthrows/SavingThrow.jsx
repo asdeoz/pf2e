@@ -1,13 +1,36 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import propTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
-import { calculateProficiency, calculateModifier, printModifier } from '../../../../utils/Utils';
+import {
+  calculateProficiency,
+  calculateModifier,
+  printBonus,
+  abbr,
+} from '../../../../utils/Utils';
+import BonusBox from '../../../../components/BonusBox';
+import ProficiencyBox from '../../../../components/ProficiencyBox';
 
 const getSavingThrow = (modifier, prof, level, item) => {
   const profScore = calculateProficiency(prof, level);
-  return profScore + modifier + item;
+  return printBonus(profScore + modifier + item);
 };
+
+const useStyles = makeStyles({
+  root: {
+    flexGrow: 1,
+    border: '1px solid black',
+    maxWidth: '14rem',
+  },
+  savingthrowBox: {
+    border: '1px solid black',
+    borderRadius: '.5rem',
+    maxWidth: '8rem',
+    margin: '.3rem auto',
+    padding: '.3rem 1.5rem',
+  },
+});
 
 export default function SavingThrow(props) {
   const {
@@ -19,15 +42,26 @@ export default function SavingThrow(props) {
     level,
   } = props;
   const modifier = calculateModifier(scoreValue);
+  const classes = useStyles();
 
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" className={classes.root}>
       <Grid item>{name}</Grid>
-      <Grid item>{getSavingThrow(modifier, prof, level, item)}</Grid>
-      <Grid container>
+      <Grid item className={classes.savingthrowBox}>
+        {getSavingThrow(modifier, prof, level, item)}
+      </Grid>
+      <Grid container direction="row">
         <Grid item xs={6}>
-          {scoreName}
-          {printModifier(modifier)}
+          <BonusBox title={abbr(scoreName)} bonus={modifier} />
+        </Grid>
+        <Grid item xs={6}>
+          <BonusBox title="Prof" bonus={prof} />
+        </Grid>
+        <Grid item xs={6}>
+          <BonusBox title="Item" bonus={item} />
+        </Grid>
+        <Grid item xs={6}>
+          <ProficiencyBox proficiency={prof} />
         </Grid>
       </Grid>
     </Grid>

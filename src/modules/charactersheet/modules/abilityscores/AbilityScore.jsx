@@ -2,13 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { calculateModifier, printModifier } from '../../../../utils/Utils';
+import { calculateModifier, printBonus, abbr } from '../../../../utils/Utils';
 
 const getModifier = (score) => {
   const modifier = calculateModifier(score);
-  return printModifier(modifier);
+  return printBonus(modifier);
 };
-const abbr = name => (name.substring(0, 3));
 
 const useStyles = makeStyles(() => ({
   root: {
