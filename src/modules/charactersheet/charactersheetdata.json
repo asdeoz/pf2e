@@ -1,5 +1,6 @@
 {
   "level": 2,
+  "hitPoints": 23,
   "savingthrows": {
     "fortitude": {
       "proficiency": 1,

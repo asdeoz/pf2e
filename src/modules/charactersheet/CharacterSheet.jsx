@@ -2,6 +2,7 @@ import React from 'react';
 
 import AbilityScores from './modules/abilityscores/AbilityScores';
 import SavingThrows from './modules/savingthrows/SavingThrows';
+import HeartHitPoints from '../../components/HeartHitPoints';
 
 import sheet from './charactersheetdata.json';
 
@@ -14,6 +15,7 @@ export default function CharacterSheet() {
         savingthrows={sheet.savingthrows}
         level={sheet.level}
       />
+      <HeartHitPoints hitPoints={sheet.hitPoints} size={5} />
     </>
   );
 }
