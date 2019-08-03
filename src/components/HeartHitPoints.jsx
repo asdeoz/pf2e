@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
   text: {
     position: 'absolute',
-    fontSize: size => `${size * 0.4}rem`,
+    fontSize: size => `${size * 0.3}rem`,
     top: 0,
     left: 0,
     width: size => `${size * 1.5}rem`,
@@ -22,6 +22,18 @@ const useStyles = makeStyles({
     display: 'inline-block',
     textAlign: 'center',
     verticalAlign: 'middle',
+  },
+  max: {
+    position: 'absolute',
+    fontSize: size => `${size * 0.1}rem`,
+    top: 0,
+    left: 0,
+    width: size => `${size * 1.5}rem`,
+    // lineHeight: size => `${size * 1.4}rem`,
+    display: 'inline-block',
+    textAlign: 'center',
+    verticalAlign: 'middle',
+    marginTop: size => `${((size * 1.4) / 2) + ((size * 0.3) / 2)}rem`,
   },
 });
 
@@ -37,6 +49,7 @@ export default function HeartHitPoints(props) {
       <span className={classes.text}>
         {hitPoints}
       </span>
+      <span className={classes.max}>MAX</span>
     </div>
   );
 }

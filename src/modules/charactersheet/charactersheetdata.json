@@ -1,6 +1,7 @@
 {
   "level": 2,
-  "hitPoints": 23,
+  "currentHitPoints": 23,
+  "maxHitPoints": 160,
   "savingthrows": {
     "fortitude": {
       "proficiency": 1,

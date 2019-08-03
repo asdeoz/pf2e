@@ -15,7 +15,7 @@ export default function CharacterSheet() {
         savingthrows={sheet.savingthrows}
         level={sheet.level}
       />
-      <HeartHitPoints hitPoints={sheet.hitPoints} size={5} />
+      <HeartHitPoints hitPoints={sheet.maxHitPoints} size={5} />
     </>
   );
 }
