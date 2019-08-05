@@ -1,7 +1,20 @@
 {
   "level": 2,
+  "heroPoints": 1,
   "currentHitPoints": 23,
   "maxHitPoints": 160,
+  "generalInfo": {
+    "charName": "Eileen Arcadia",
+    "playerName": "Chuck G",
+    "exp": 750,
+    "ancestry": "Goblin",
+    "background": "Privateer",
+    "class": "Ranger",
+    "size": "SM",
+    "alignment": "Neutral Good",
+    "traits": "Missing an eye",
+    "deity": "Lord Vauthry"
+  },
   "savingthrows": {
     "fortitude": {
       "proficiency": 1,
