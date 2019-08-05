@@ -1,45 +1,24 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 
+import TitledBox from './TitledBox';
 import { printBonus } from '../utils/Utils';
 
-const useStyles = makeStyles({
-  root: {
-    border: '1px solid black',
-    margin: '.3rem',
-    maxWidth: '5.8rem',
-  },
-  title: {
-    backgroundColor: '#000000',
-    color: '#FFFFFF',
-    fontSize: 'smaller',
-    textTransform: 'uppercase',
-  },
-});
-
 export default function BonusBox(props) {
-  const { title, bonus } = props;
-  const classes = useStyles();
+  const { title, bonus, uppercase } = props;
 
   return (
-    <div className={classes.root}>
-      <Typography className={classes.title}>
-        {title}
-      </Typography>
-      <Typography>
-        {printBonus(bonus)}
-      </Typography>
-    </div>
+    <TitledBox title={title} info={printBonus(bonus)} uppercase={uppercase} />
   );
 }
 
 BonusBox.propTypes = {
   title: propTypes.string.isRequired,
   bonus: propTypes.number,
+  uppercase: propTypes.bool,
 };
 
 BonusBox.defaultProps = {
   bonus: 0,
+  uppercase: false,
 };

@@ -52,13 +52,13 @@ export default function SavingThrow(props) {
       </Grid>
       <Grid container direction="row">
         <Grid item xs={6}>
-          <BonusBox title={abbr(scoreName)} bonus={modifier} />
+          <BonusBox title={abbr(scoreName)} bonus={modifier} uppercase />
         </Grid>
         <Grid item xs={6}>
-          <BonusBox title="Prof" bonus={prof} />
+          <BonusBox title="Prof" bonus={prof} uppercase />
         </Grid>
         <Grid item xs={6}>
-          <BonusBox title="Item" bonus={item} />
+          <BonusBox title="Item" bonus={item} uppercase />
         </Grid>
         <Grid item xs={6}>
           <ProficiencyBox proficiency={prof} />
