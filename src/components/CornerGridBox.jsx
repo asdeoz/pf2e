@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
   title: {
     position: 'absolute',
-    top: '.2rem',
+    top: '0',
     left: '.2rem',
     fontSize: '.8rem',
   },
@@ -22,11 +22,16 @@ const useStyles = makeStyles({
 });
 
 export default function CornerGridBox(props) {
-  const { title, info, size } = props;
+  const {
+    title,
+    info,
+    size,
+    xs,
+  } = props;
   const classes = useStyles(size);
 
   return (
-    <Grid item className={classes.root}>
+    <Grid item className={classes.root} xs={xs || 12}>
       <span className={classes.title}>{title}</span>
       <span className={classes.info}>{info}</span>
     </Grid>
@@ -35,10 +40,13 @@ export default function CornerGridBox(props) {
 
 CornerGridBox.propTypes = {
   title: propTypes.string.isRequired,
-  info: propTypes.string.isRequired,
+  info: propTypes.oneOfType([propTypes.string, propTypes.number]),
   size: propTypes.number,
+  xs: propTypes.number,
 };
 
 CornerGridBox.defaultProps = {
+  info: '',
   size: 1,
+  xs: 12,
 };

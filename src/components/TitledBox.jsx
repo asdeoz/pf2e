@@ -1,9 +1,9 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({
+const styles = {
   root: {
     border: '1px solid black',
     margin: '.3rem',
@@ -13,13 +13,12 @@ const useStyles = makeStyles({
     backgroundColor: '#000000',
     color: '#FFFFFF',
     fontSize: 'smaller',
-    textTransform: uppercase => (uppercase ? 'uppercase' : 'none'),
+    textTransform: props => (props.uppercase === true ? 'uppercase' : 'initial'),
   },
-});
+};
 
-export default function TitledBox(props) {
-  const { title, info, uppercase } = props;
-  const classes = useStyles(uppercase);
+function TitledBox(props) {
+  const { title, info, classes } = props;
 
   return (
     <div className={classes.root}>
@@ -33,10 +32,13 @@ export default function TitledBox(props) {
   );
 }
 
+export default withStyles(styles)(TitledBox);
+
 TitledBox.propTypes = {
   title: propTypes.string.isRequired,
   info: propTypes.oneOfType([propTypes.string, propTypes.number]),
   uppercase: propTypes.bool,
+  classes: propTypes.object.isRequired,
 };
 
 TitledBox.defaultProps = {

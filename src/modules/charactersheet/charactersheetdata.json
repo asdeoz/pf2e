@@ -3,6 +3,9 @@
   "heroPoints": 1,
   "currentHitPoints": 23,
   "maxHitPoints": 160,
+  "tempHitPoints": 10,
+  "dying": 0,
+  "wounded": 0,
   "generalInfo": {
     "charName": "Eileen Arcadia",
     "playerName": "Chuck G",

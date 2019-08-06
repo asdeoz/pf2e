@@ -2,9 +2,9 @@ import React from 'react';
 
 import AbilityScores from './modules/abilityscores/AbilityScores';
 import SavingThrows from './modules/savingthrows/SavingThrows';
-import HeartHitPoints from '../../components/HeartHitPoints';
 import CharacterInfo from './modules/characterinfo/CharacterInfo';
 import LevelAndHeroPoint from './modules/characterinfo/LevelAndHeroPoint';
+import HitPoints from './modules/hitpoints/HitPoints';
 
 import sheet from './charactersheetdata.json';
 
@@ -17,7 +17,13 @@ export default function CharacterSheet() {
         savingthrows={sheet.savingthrows}
         level={sheet.level}
       />
-      <HeartHitPoints hitPoints={sheet.maxHitPoints} size={5} />
+      <HitPoints
+        maxHitPoints={sheet.maxHitPoints}
+        currentHitPoints={sheet.currentHitPoints}
+        tempHitPoints={sheet.tempHitPoints}
+        dying={sheet.dying}
+        wounded={sheet.wounded}
+      />
       <CharacterInfo info={sheet.generalInfo} />
       <LevelAndHeroPoint level={sheet.level} heroPoints={sheet.heroPoints} />
     </>
